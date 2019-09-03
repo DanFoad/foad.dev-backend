@@ -1,7 +1,0 @@
-version: '3'
-services:
-  foad.dev-backend-app:
-    container_name: foad.dev-backend-app
-    build: ./foad.dev-backend-app
-    ports:
-      - "8080:8080"
