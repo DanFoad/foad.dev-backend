@@ -9,7 +9,7 @@ project.task('start') {
 
     doLast {
         project.exec {
-            commandLine 'bash', '-c', "docker build -t backend . && docker run backend"
+            commandLine 'bash', '-c', "docker build -t backend . && docker run -p 8080:8080 backend"
         }
     }
 }
