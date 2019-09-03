@@ -1,0 +1,15 @@
+plugins {
+    id 'scala'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
+
+project.task('start') {
+    dependsOn(":foad.dev-backend-app:clean")
+    dependsOn(":foad.dev-backend-app:shadowJar")
+
+    doLast {
+        project.exec {
+            commandLine 'bash', '-c', "docker build -t backend . && docker run backend"
+        }
+    }
+}
